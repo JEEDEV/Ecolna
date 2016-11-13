@@ -13,8 +13,68 @@
     tools:context="ihm.com.ecolna.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/Email"
+            android:text="Email"
+            android:textColor="?android:attr/textColorSecondaryInverseNoDisable"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="50dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text="mot de passe"
+            android:ems="10"
+            android:id="@+id/password"
+            android:textColor="?android:attr/textColorSecondaryNoDisable"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="50dp" />
+
+        <CheckBox
+            android:text="remember me"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/focus"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginRight="50dp" />
+
+        <Button
+            android:text="connexion"
+            android:layout_width="116dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/log"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginTop="30dp"
+            />
+
+        <Button
+            android:text="s'inscrire"
+            android:layout_width="116dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/inscrire"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginTop="10dp"
+            android:visibility="visible" />
+
+    </LinearLayout>
 </RelativeLayout>
