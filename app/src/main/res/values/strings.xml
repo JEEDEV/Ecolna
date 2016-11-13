@@ -1,4 +1,31 @@
 <resources>
     <string name="app_name">Ecolna</string>
     <string name="action_settings">Settings</string>
+
+    <string name="action_search">Search</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <string name="nav_item_home">Acceuil</string>
+    <string name="nav_item_courses">Coures</string>
+    <string name="nav_item_qcm">QCM</string>
+    <string name="nav_item_forum">Forum</string>
+    <string name="nav_item_notifications">Messages</string>
+
+    <!-- navigation drawer item labels  -->
+    <string-array name="nav_drawer_labels">
+        <item>@string/nav_item_home</item>
+        <item>@string/nav_item_courses</item>
+        <item>@string/nav_item_qcm</item>
+        <item>@string/nav_item_forum</item>
+        <item>@string/nav_item_notifications</item>
+    </string-array>
+
+    <string name="title_messages">Messages</string>
+
+    <string name="title_home">Acceuil</string>
+    <string name="title_courses">Cours</string>
+    <string name="title_qcm">QCM</string>
+    <string name="title_forum">Forum</string>
+
 </resources>
