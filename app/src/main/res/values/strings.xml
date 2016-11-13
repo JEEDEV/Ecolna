@@ -10,7 +10,6 @@
     <string name="nav_item_courses">Coures</string>
     <string name="nav_item_qcm">QCM</string>
     <string name="nav_item_forum">Forum</string>
-    <string name="nav_item_notifications">Messages</string>
 
     <!-- navigation drawer item labels  -->
     <string-array name="nav_drawer_labels">
@@ -18,7 +17,6 @@
         <item>@string/nav_item_courses</item>
         <item>@string/nav_item_qcm</item>
         <item>@string/nav_item_forum</item>
-        <item>@string/nav_item_notifications</item>
     </string-array>
 
     <string name="title_messages">Messages</string>
