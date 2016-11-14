@@ -21,6 +21,8 @@
         android:layout_alignParentStart="true"
         android:weightSum="1">
 
+
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,7 +30,8 @@
             android:ems="10"
             android:id="@+id/Email"
             android:hint="Email"
-            android:textColor="?android:attr/textColorSecondaryInverseNoDisable"
+            android:textColorHint="?android:attr/textColorSecondaryInverseNoDisable"
+            android:textColor="@color/navigationBarColor"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="50dp"
@@ -38,23 +41,24 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="mot de passe"
+            android:inputType="textPassword"
+            android:hint="mot de passe"
             android:ems="10"
-            android:id="@+id/password"
-            android:textColor="?android:attr/textColorSecondaryNoDisable"
+            android:id="@+id/key"
+            android:textColor="@color/navigationBarColor"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="30dp"
-            android:layout_marginRight="50dp" />
+            android:layout_marginRight="50dp"
+            android:textColorHint="?android:attr/textColorSecondaryInverseNoDisable" />
 
-        <CheckBox
-            android:text="remember me"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/focus"
+            android:id="@+id/verif"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="150dp"
-            android:layout_marginRight="50dp" />
+            android:layout_marginRight="50dp"
+            android:textColor="@android:color/holo_red_dark" />
 
         <Button
             android:text="connexion"
@@ -75,7 +79,8 @@
             android:layout_marginLeft="100dp"
             android:layout_marginRight="100dp"
             android:layout_marginTop="10dp"
-            android:visibility="visible" />
+            android:onClick="inscrire"
+            />
 
     </LinearLayout>
 </RelativeLayout>

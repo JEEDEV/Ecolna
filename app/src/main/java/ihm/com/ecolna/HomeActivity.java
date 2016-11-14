@@ -1,5 +1,6 @@
 package ihm.com.ecolna;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -58,7 +59,9 @@ public class HomeActivity extends ActionBarActivity implements FragmentDrawer.Fr
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_deconnexion) {
+            Intent intent = new Intent(this, MainActivity.class);
+            this.startActivity(intent);
             return true;
         }
 

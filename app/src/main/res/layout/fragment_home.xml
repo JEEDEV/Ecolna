@@ -6,25 +6,30 @@
     tools:context="ihm.com.ecolna.fragments.HomeFragment">
 
 
-    <TextView
-        android:id="@+id/label"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textSize="45dp"
-        android:text="Acceuil"
-        android:textStyle="bold"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_below="@id/label"
-        android:layout_centerInParent="true"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="12dp"
-        android:layout_marginTop="10dp"
-        android:gravity="center_horizontal"
-        android:text="Edit fragment_home.xml to change the appearance" />
+        <TextView
+            android:id="@+id/label"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="100dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textSize="45dp"
+            android:text="Acceuil"
+            android:textStyle="bold"/>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/listAccueil"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="50dp" />
+    </LinearLayout>
 
 </RelativeLayout>

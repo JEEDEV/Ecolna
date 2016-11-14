@@ -6,25 +6,71 @@
     tools:context="ihm.com.ecolna.fragments.HomeFragment">
 
 
-    <TextView
-        android:id="@+id/label"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_horizontal"
-        android:textSize="45dp"
-        android:text="QCM"
-        android:textStyle="bold"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_below="@id/label"
-        android:layout_centerInParent="true"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textSize="12dp"
-        android:layout_marginTop="10dp"
-        android:gravity="center_horizontal"
-        android:text="Edit fragment_home.xml to change the appearance" />
+        <TextView
+            android:text="question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/question"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="50dp" />
+
+        <CheckBox
+            android:text="CheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rep1"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp" />
+
+        <CheckBox
+            android:text="CheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rep2"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp" />
+
+        <CheckBox
+            android:text="CheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rep3"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp" />
+
+        <CheckBox
+            android:text="CheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rep4"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:text="suivant"
+            android:layout_width="match_parent"
+            android:id="@+id/next"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="120dp"
+            android:minHeight="43dp"
+            android:layout_marginBottom="100dp"
+            android:layout_height="40dp" />
+
+    </LinearLayout>
 
 </RelativeLayout>
