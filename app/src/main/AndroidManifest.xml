@@ -27,6 +27,11 @@
             android:label="Inscription">
         </activity>
 
+        <activity
+            android:name=".QcmActivity"
+            android:label="Qcm">
+        </activity>
+
 
     </application>
 

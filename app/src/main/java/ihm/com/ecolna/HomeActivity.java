@@ -63,6 +63,7 @@ public class HomeActivity extends ActionBarActivity implements FragmentDrawer.Fr
             Intent intent = new Intent(this, MainActivity.class);
             this.startActivity(intent);
             return true;
+
         }
 
         //if(id == R.id.action_search){

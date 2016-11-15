@@ -1,22 +1,18 @@
 package ihm.com.ecolna;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.content.Intent;
+import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     EditText mail = null;
     EditText key = null;
-    TextView verif = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,18 +21,34 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         mail = (EditText)findViewById(R.id.Email);
         key = (EditText)findViewById(R.id.key);
-        verif = (TextView)findViewById(R.id.verif);
+
     }
 
 
     public void authenticate(View view) {
+
+
 
         if((mail.getText().toString().equals("maha")) && (key.getText().toString().equals("bilel"))) {
             Intent intent = new Intent(this, HomeActivity.class);
             startActivity(intent);
         }
         else
-            verif.setText("Email ou mot de passe est invalide");
+        {
+
+            if( mail.getText().toString().length() == 0 )
+                mail.setError( "l'Email est obligatoire !" );
+
+            else {
+                if( key.getText().toString().length() == 0 && mail.getText().toString().length() != 0)
+                    key.setError("le mot de passe est obligatoire !" );
+                else key.setError("Email ou mot de passe est invalide");
+            }
+
+
+
+        }
+
 
     }
     public void inscrire(View view){
