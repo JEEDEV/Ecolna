@@ -6,5 +6,6 @@
         android:id="@+id/action_deconnexion"
         android:orderInCategory="100"
         android:title="Déconnexion"
-        app:showAsAction="never" />
+        android:icon="@drawable/decnx"
+        app:showAsAction="ifRoom" />
 </menu>

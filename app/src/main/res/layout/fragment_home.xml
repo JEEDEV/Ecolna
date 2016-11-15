@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -19,17 +20,15 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:textSize="45dp"
-            android:text="Acceuil"
+            android:text="Bienvenu sur Ecolna"
             android:textStyle="bold"/>
 
-        <ListView
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/listAccueil"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="50dp" />
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/programming"
+            android:id="@+id/imageView" />
+
     </LinearLayout>
 
 </RelativeLayout>

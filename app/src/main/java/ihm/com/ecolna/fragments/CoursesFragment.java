@@ -1,19 +1,25 @@
 package ihm.com.ecolna.fragments;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
+import ihm.com.ecolna.MainActivity;
 import ihm.com.ecolna.R;
 
 /**
  * Created by bilel on 13/11/2016.
  */
 
-public class CoursesFragment extends Fragment {
+public class CoursesFragment extends ListFragment implements AdapterView.OnItemClickListener {
 
     public CoursesFragment() {
         // Required empty public constructor
@@ -33,6 +39,19 @@ public class CoursesFragment extends Fragment {
 
         // Inflate the layout for this fragment
         return rootView;
+    }
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(),
+                R.array.cours, android.R.layout.simple_list_item_1);
+        setListAdapter(adapter);
+        getListView().setOnItemClickListener((AdapterView.OnItemClickListener) this);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
+        Toast.makeText(getActivity(), "Item: " + position, Toast.LENGTH_SHORT).show();
+
     }
 
     @Override

@@ -25,5 +25,17 @@
     <string name="title_courses">Cours</string>
     <string name="title_qcm">QCM</string>
     <string name="title_forum">Forum</string>
+    <string-array name="cours">
+        <item>Android</item>
+        <item>Java</item>
+        <item>Python</item>
+        <item>C++</item>
+    </string-array>
 
+    <string-array name="questions">
+        <item>question 1</item>
+        <item>question 2</item>
+        <item>question 3</item>
+        <item>question 4</item>
+    </string-array>
 </resources>
