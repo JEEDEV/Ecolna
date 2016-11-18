@@ -12,6 +12,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import ihm.com.ecolna.CoursActivity;
+import ihm.com.ecolna.HomeActivity;
 import ihm.com.ecolna.MainActivity;
 import ihm.com.ecolna.R;
 
@@ -50,7 +52,8 @@ public class CoursesFragment extends ListFragment implements AdapterView.OnItemC
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
-        Toast.makeText(getActivity(), "Item: " + position, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getActivity(), CoursActivity.class);
+        startActivity(intent);
 
     }
 

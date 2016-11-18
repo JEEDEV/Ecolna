@@ -5,24 +5,29 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import ihm.com.ecolna.fragments.CoursesFragment;
+import ihm.com.ecolna.fragments.ForumFragment;
+import ihm.com.ecolna.fragments.HomeFragment;
 import ihm.com.ecolna.fragments.OneFragment;
+import ihm.com.ecolna.fragments.QcmFragment;
 import ihm.com.ecolna.fragments.ThreeFragment;
 import ihm.com.ecolna.fragments.TwoFragment;
 
 
 public class QcmActivity extends AppCompatActivity {
-
     private Toolbar toolbar;
     private SlidingTabLayout tabLayout;
     private ViewPager viewPager;
-
+    private FragmentDrawer drawerFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +35,7 @@ public class QcmActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
 
 
@@ -85,4 +91,5 @@ public class QcmActivity extends AppCompatActivity {
             return mFragmentTitleList.get(position);
         }
     }
+
 }

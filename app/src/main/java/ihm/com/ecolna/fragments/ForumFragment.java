@@ -1,6 +1,7 @@
 package ihm.com.ecolna.fragments;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.ListFragment;
@@ -11,6 +12,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import ihm.com.ecolna.ForumActivity;
+import ihm.com.ecolna.QcmActivity;
 import ihm.com.ecolna.R;
 
 /**
@@ -48,7 +51,10 @@ public class ForumFragment extends ListFragment  implements AdapterView.OnItemCl
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
-        Toast.makeText(getActivity(), "Item: " + position, Toast.LENGTH_SHORT).show();
+        Intent in = new Intent(getActivity().getApplicationContext(),ForumActivity.class);
+
+        startActivity(in);
+
     }
     @Override
     public void onAttach(Activity activity) {

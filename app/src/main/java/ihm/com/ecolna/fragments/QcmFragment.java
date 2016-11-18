@@ -20,7 +20,7 @@ import ihm.com.ecolna.R;
 public class QcmFragment extends ListFragment implements AdapterView.OnItemClickListener   {
 
     public QcmFragment() {
-        // Required empty public constructor
+        // Required empty public constructorMainActivity
     }
 
     @Override

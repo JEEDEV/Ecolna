@@ -1,11 +1,16 @@
 package ihm.com.ecolna.fragments;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.app.Fragment;
+
+import ihm.com.ecolna.CoursActivity;
+import ihm.com.ecolna.ForumActivity;
+import ihm.com.ecolna.QcmActivity;
 import ihm.com.ecolna.R;
 
 /**

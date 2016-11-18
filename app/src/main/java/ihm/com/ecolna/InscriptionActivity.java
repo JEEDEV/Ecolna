@@ -16,7 +16,7 @@ public class InscriptionActivity extends AppCompatActivity {
     EditText nom = null;
     EditText prenom = null;
     EditText ecole = null;
-    TextView verif = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,19 +28,30 @@ public class InscriptionActivity extends AppCompatActivity {
         mail = (EditText)findViewById(R.id.mail);
         key= (EditText)findViewById(R.id.password);
         ecole=(EditText)findViewById(R.id.ecole);
-        verif = (TextView)findViewById(R.id.verif);
+
     }
 
 
 
     public void connexion(View view){
-        if(!((nom.getText().toString().equals(""))||(prenom.getText().toString().equals(""))
-                ||(mail.getText().toString().equals(""))||(key.getText().toString().equals(""))||(ecole.getText().toString().equals("")))) {
+        if(nom.getText().toString().equals(""))
+            nom.setError("Veuillez saisir votre nom");
+        else if((prenom.getText().toString().equals("")) && !(nom.getText().toString().equals("")))
+
+            prenom.setError("Veuillez saisir votre prénom");
+        else if((mail.getText().toString().equals(""))&& !(nom.getText().toString().equals("")) && !(prenom.getText().toString().equals("")))
+            mail.setError("Veuillez saisir votre Email");
+        else if((key.getText().toString().equals(""))&& !(nom.getText().toString().equals(""))
+                && !(prenom.getText().toString().equals(""))&& !(mail.getText().toString().equals("")))
+            key.setError("Veuillez saisir votre mot de passe");
+        else if((ecole.getText().toString().equals(""))&& !(nom.getText().toString().equals("")) && !(prenom.getText().toString().equals(""))
+                && !(mail.getText().toString().equals(""))&& !(key.getText().toString().equals("")))
+            ecole.setError("Veuillez saisir votre institut");
+
+        else if (!(nom.getText().toString().equals(""))&& !(prenom.getText().toString().equals(""))&& !(mail.getText().toString().equals(""))
+                && !(key.getText().toString().equals(""))&& !(ecole.getText().toString().equals(""))){
             Intent intent = new Intent(this, HomeActivity.class);
             startActivity(intent);
-        }
-        else{
-            verif.setText("Veuillez saisir le formulaire");
         }
     }
     @Override

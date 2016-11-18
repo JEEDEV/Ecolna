@@ -26,12 +26,28 @@
             android:name=".InscriptionActivity"
             android:label="Inscription">
         </activity>
+        <activity
+            android:name=".DetailCoursActivity"
+            android:label="Tutorial">
+        </activity>
 
         <activity
             android:name=".QcmActivity"
             android:label="Qcm">
         </activity>
 
+        <activity
+            android:name=".CoursActivity"
+            android:label="Chapitres">
+        </activity>
+        <activity
+            android:name=".ForumActivity"
+            android:label="Réponses">
+        </activity><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
     </application>
 

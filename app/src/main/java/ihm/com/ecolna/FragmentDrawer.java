@@ -49,10 +49,11 @@ public class FragmentDrawer extends Fragment {
 
 
         // preparing navigation drawer items
-        for (int i = 0; i < titles.length; i++) {
+       for (int i = 0; i < titles.length; i++) {
             NavDrawerItem navItem = new NavDrawerItem();
             navItem.setTitle(titles[i]);
-            data.add(navItem);
+
+           data.add(navItem);
         }
         return data;
     }

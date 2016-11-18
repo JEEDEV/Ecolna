@@ -10,7 +10,7 @@
     <string name="nav_item_courses">Coures</string>
     <string name="nav_item_qcm">QCM</string>
     <string name="nav_item_forum">Forum</string>
-
+    <string name="scroll">ScrollView_Vertical</string>
     <!-- navigation drawer item labels  -->
     <string-array name="nav_drawer_labels">
         <item>@string/nav_item_home</item>
