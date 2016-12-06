@@ -58,6 +58,7 @@ public class CoursActivity extends AppCompatActivity {
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
+
     }
 
 
@@ -81,6 +82,7 @@ public class CoursActivity extends AppCompatActivity {
             this.startActivity(intent);
             return true;
         }
+
 
         return super.onOptionsItemSelected(item);
     }

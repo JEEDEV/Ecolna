@@ -13,9 +13,7 @@ import ihm.com.ecolna.ForumActivity;
 import ihm.com.ecolna.QcmActivity;
 import ihm.com.ecolna.R;
 
-/**
- * Created by bilel on 13/11/2016.
- */
+
 
 public class HomeFragment extends Fragment {
 

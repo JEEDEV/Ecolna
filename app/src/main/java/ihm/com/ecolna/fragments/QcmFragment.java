@@ -13,9 +13,7 @@ import android.widget.ArrayAdapter;
 import ihm.com.ecolna.QcmActivity;
 import ihm.com.ecolna.R;
 
-/**
- * Created by bilel on 13/11/2016.
- */
+
 
 public class QcmFragment extends ListFragment implements AdapterView.OnItemClickListener   {
 

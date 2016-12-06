@@ -21,8 +21,10 @@
         android:layout_alignParentStart="true"
         android:weightSum="1">
 
-
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/db"/>
         <EditText
             android:layout_width="match_parent"
             android:inputType="textEmailAddress"
@@ -34,7 +36,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="130dp"
             android:layout_marginRight="50dp"
             android:layout_height="40dp" />
 
@@ -47,37 +49,52 @@
             android:id="@+id/key"
             android:textColor="@color/navigationBarColor"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="40dp"
             android:layout_marginRight="50dp"
             android:textColorHint="?android:attr/textColorSecondaryInverseNoDisable"
-          />
+            />
 
 
-        <Button
-            android:text="connexion"
-            android:layout_width="116dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/log"
-            android:onClick="authenticate"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp"
-            android:layout_marginTop="30dp"
-            android:background="@color/colorPrimaryDark"
-            android:textColor="@android:color/background_light"
-            android:drawableLeft="@drawable/log"/>
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <Button
-            android:text="s'inscrire"
-            android:layout_width="116dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/inscrire"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp"
-            android:layout_marginTop="10dp"
-            android:onClick="inscrire"
-            android:background="@color/colorPrimaryDark"
-            android:textColor="@android:color/background_light"
-            android:drawableLeft="@drawable/insci"/>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+
+                <Button
+                    android:text="s'inscrire"
+                    android:layout_width="116dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/inscrire"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="40dp"
+                    android:onClick="inscrire"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@android:color/background_light"
+                    android:drawableLeft="@drawable/insci"/>
+
+                <Button
+                    android:text="connexion"
+                    android:layout_width="116dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/log"
+                    android:onClick="authenticate"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="40dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="@android:color/background_light"
+                    android:drawableLeft="@drawable/log"/>
+            </TableRow>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rslt"/>
+        </TableLayout>
+
+
 
     </LinearLayout>
 </RelativeLayout>

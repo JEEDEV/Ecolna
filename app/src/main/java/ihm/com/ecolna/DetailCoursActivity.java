@@ -20,14 +20,14 @@ import com.google.android.gms.common.api.GoogleApiClient;
 public class DetailCoursActivity extends AppCompatActivity {
     ListView cours;
     String[] titre = new String[]{
-            "Hello World", "titre 2", "titre 3", "titre 4"
+            "Hello World", "Variables", "titre 3", "titre 4"
     };
     private FragmentDrawer drawerFragment;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
-    private GoogleApiClient client;
+    //private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +41,11 @@ public class DetailCoursActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(DetailCoursActivity.this,
                 android.R.layout.simple_list_item_1, titre);
         cours.setAdapter(adapter);
-       // cours.setOnItemClickListener(new ListClickHandler());
+        cours.setOnItemClickListener(new DetailCoursActivity.ListClickHandler());
+        // cours.setOnItemClickListener(new ListClickHandler());
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+        // client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
 
@@ -69,6 +70,7 @@ public class DetailCoursActivity extends AppCompatActivity {
             return true;
         }
 
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -77,7 +79,7 @@ public class DetailCoursActivity extends AppCompatActivity {
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
-    public Action getIndexApiAction() {
+    /*public Action getIndexApiAction() {
         Thing object = new Thing.Builder()
                 .setName("Cours Page") // TODO: Define a title for the content shown.
                 // TODO: Make sure this auto-generated URL is correct.
@@ -87,7 +89,7 @@ public class DetailCoursActivity extends AppCompatActivity {
                 .setObject(object)
                 .setActionStatus(Action.STATUS_TYPE_COMPLETED)
                 .build();
-    }
+    }*/
 
     @Override
     public void onStart() {
@@ -95,8 +97,8 @@ public class DetailCoursActivity extends AppCompatActivity {
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect();
-        AppIndex.AppIndexApi.start(client, getIndexApiAction());
+        // client.connect();
+        //AppIndex.AppIndexApi.start(client, getIndexApiAction());
     }
 
     @Override
@@ -105,24 +107,23 @@ public class DetailCoursActivity extends AppCompatActivity {
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        AppIndex.AppIndexApi.end(client, getIndexApiAction());
-        client.disconnect();
+        //AppIndex.AppIndexApi.end(client, getIndexApiAction());
+        //client.disconnect();
     }
 
 
-    /*public class ListClickHandler implements AdapterView.OnItemClickListener {
+    public class ListClickHandler implements AdapterView.OnItemClickListener {
 
         @Override
         public void onItemClick(AdapterView<?> adapter, View view, int position, long arg3) {
             // TODO Auto-generated method stub
-           // TextView listText = (TextView) view.findViewById(R.id.listCours);
-           // String text = listText.getText().toString();
-            Intent intent = new Intent(DetailCoursActivity.this, HomeActivity.class);
-           // intent.putExtra("selected-item", text);
+
+            Intent intent = new Intent(DetailCoursActivity.this, TutorialActivity.class);
             startActivity(intent);
+
+
 
         }
 
-    }*/
-
+    }
     }

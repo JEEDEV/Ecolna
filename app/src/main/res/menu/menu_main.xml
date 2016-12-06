@@ -9,5 +9,4 @@
         android:icon="@drawable/decnx"
         app:showAsAction="ifRoom" />
 
-
 </menu>

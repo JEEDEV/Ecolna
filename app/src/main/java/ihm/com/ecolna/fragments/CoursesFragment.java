@@ -17,9 +17,6 @@ import ihm.com.ecolna.HomeActivity;
 import ihm.com.ecolna.MainActivity;
 import ihm.com.ecolna.R;
 
-/**
- * Created by bilel on 13/11/2016.
- */
 
 public class CoursesFragment extends ListFragment implements AdapterView.OnItemClickListener {
 
