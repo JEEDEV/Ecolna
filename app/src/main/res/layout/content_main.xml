@@ -25,6 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/db"/>
+
         <EditText
             android:layout_width="match_parent"
             android:inputType="textEmailAddress"

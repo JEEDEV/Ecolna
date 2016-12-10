@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         mail = (EditText) findViewById(R.id.Email);
         key = (EditText) findViewById(R.id.key);
         cnx = (TextView) findViewById(R.id.db);
-        new GetData().execute("http://localhost:1000/api/user");
+        new GetData().execute("http://192.168.1.2:1000/api/etudiant");
     }
 
 
@@ -97,13 +97,28 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... params) {
-
+            BufferedReader bufferedReader = null;
             try {
-                return getData(params[0]);
+                //initialize and config request , then connect to server
+                URL url = new URL(params[0]);
+                HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+                urlConnection.setReadTimeout(10000);
+                urlConnection.setConnectTimeout(10000);
+                urlConnection.setRequestMethod("GET");
+                urlConnection.setRequestProperty("content-Type", "application/json");
+                urlConnection.connect();
+
+                //read data reponse from server
+                InputStream inputStream = urlConnection.getInputStream();
+                bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+                String line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    resultat.append(line).append("\n");
+                }
             } catch (IOException ex) {
                 return "network error";
             }
-
+            return resultat.toString();
 
         }
 
@@ -115,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
             cnx.setText(resultat);
         }
 
-        private String getData(String urlPath) throws IOException {
+     /*   private String getData(String urlPath) throws IOException {
             BufferedReader bufferedReader = null;
             try {
                 //initialize and config request , then connect to server
@@ -141,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             return resultat.toString();
-        }
+        }*/
     }
 }
 

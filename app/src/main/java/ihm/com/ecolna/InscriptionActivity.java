@@ -42,7 +42,7 @@ public class InscriptionActivity extends AppCompatActivity {
         mail = (EditText)findViewById(R.id.mail);
         key= (EditText)findViewById(R.id.password);
         ecole=(EditText)findViewById(R.id.ecole);
-        new PostData().execute("http://localhost:1000/api/user");
+        new PostData().execute("http://192.168.1.2:1000/api/etudiant");
     }
 
 
