@@ -20,9 +20,7 @@
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -123,5 +121,5 @@
             app:srcCompat="@drawable/retour"
             android:id="@+id/imageButton" />
 
-    </ScrollView>
+
 </RelativeLayout>
