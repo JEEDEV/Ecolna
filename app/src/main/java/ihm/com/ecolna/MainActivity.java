@@ -1,40 +1,38 @@
 package ihm.com.ecolna;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 import ihm.com.ecolna.model.Etudiant;
+import ihm.com.ecolna.tools.IOperation;
 import ihm.com.ecolna.tools.IRequest;
-import ihm.com.ecolna.tools.WebService;
+import ihm.com.ecolna.tools.MAsyncTask;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
     EditText mail = null;
     EditText key = null;
     TextView cnx = null;
 
-    private String TAG = MainActivity.class.getSimpleName();
+
 
     private List<Etudiant> le ;
-    private ProgressDialog pDialog;
+
 
 
     private String email;
     private String password;
-    private boolean isValid = false ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +52,7 @@ public class MainActivity extends AppCompatActivity {
     public void authenticate(View view) {
 
 
-        email =mail.getText().toString();
-        password = key.getText().toString();
+
 
 
 
@@ -65,10 +62,9 @@ public class MainActivity extends AppCompatActivity {
                     key.setError("le mot de passe est obligatoire !");
                 else
                 {
-                    new GetStudents().execute();
-                    if(isValid)
+                    if(findStudent(mail.getText().toString(),key.getText().toString()))
                     {
-                        Intent intent = new Intent(this, HomeActivity.class);
+                    Intent intent = new Intent(this, HomeActivity.class);
                     startActivity(intent);
                     }
 
@@ -81,6 +77,34 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, InscriptionActivity.class);
         startActivity(intent);
     }
+
+
+    public boolean findStudent(String email, String password)
+    {
+        boolean IsHere = false;
+        MAsyncTask mTask = new MAsyncTask(MainActivity.this,IRequest.getAllStudents, IOperation.getAllStudents);
+        try {
+            HashMap map = mTask.execute().get();
+            if (!map.containsKey("error"))
+                le=(List<Etudiant>) map.get("Response");
+            for(Etudiant e : le)
+            {
+                if(e.getEmail().equals(email)&&e.getPassword().equals(password)) return true;
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+
+
+
+        return IsHere;
+
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -106,79 +130,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private class GetStudents extends AsyncTask<Void, Void, Void> {
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            // Showing progress dialog
-            pDialog = new ProgressDialog(MainActivity.this);
-            pDialog.setMessage("Please wait...");
-            pDialog.setCancelable(true);
-            pDialog.show();
-
-        }
-
-        @Override
-        protected Void doInBackground(Void... arg0) {
-
-            WebService ws = new WebService();
-            try {
-                le = ws.getStudents(IRequest.getAllStudents);
-                int i =0;
-                if(le.isEmpty()) runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(getApplicationContext(),
-                                "Aucune donnée dans la base ",
-                                Toast.LENGTH_LONG)
-                                .show();
-                    }
-                });
-
-                while (i<le.size())
-                {
-                    if(!email.equals(le.get(i).getEmail()) && !password.equals(le.get(i).getPassword()))
-                    {
-                        i++;
-                        if(i>le.size())
-                        {
-                            isValid=false;
-                        }
-                    }
-
-                    else
-                    {
-                       i=le.size()+1;
-                       isValid=true;
-                    }
-                }
-            } catch (Exception e) {
-                Log.e(TAG, "Couldn't get json from server.");
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Toast.makeText(getApplicationContext(),
-                                "Couldn't get json from server. Check LogCat for possible errors!",
-                                Toast.LENGTH_LONG)
-                                .show();
-                    }
-                });
-            }
-            return null;
-
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            super.onPostExecute(result);
-            // Dismiss the progress dialog
-            if (pDialog.isShowing())
-                pDialog.dismiss();
-
-
-        }
-    }
 }
 
 
