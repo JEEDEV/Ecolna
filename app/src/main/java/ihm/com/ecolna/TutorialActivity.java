@@ -6,12 +6,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 /**
  * Created by ASUS on 06/12/2016.
  */
 
 public class TutorialActivity extends AppCompatActivity {
+    TextView def =null;
+    TextView titre = null;
+    String definition;
+    String title;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,6 +24,13 @@ public class TutorialActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+        def= (TextView)findViewById(R.id.def);
+        titre=(TextView)findViewById(R.id.titre);
+        Intent intent =this.getIntent();
+        title = intent.getStringExtra("titre");
+        definition= intent.getStringExtra("hello");
+        titre.setText(title);
+        def.setText(definition);
 
     }
 

@@ -113,12 +113,20 @@ public class DetailCoursActivity extends AppCompatActivity {
 
 
     public class ListClickHandler implements AdapterView.OnItemClickListener {
-
+        final String ch="L’inévitable hello world:\n" +
+                "#include <iostream>\n" +
+                "using namespace std ;\n" +
+                "int main ( ) {\n" +
+                "cout << ” hello world ! ” << endl ;\n" +
+                "}";
+        final  String titre="Hello World!";
         @Override
         public void onItemClick(AdapterView<?> adapter, View view, int position, long arg3) {
             // TODO Auto-generated method stub
 
             Intent intent = new Intent(DetailCoursActivity.this, TutorialActivity.class);
+            intent.putExtra("hello", ch);
+            intent.putExtra("titre",titre);
             startActivity(intent);
 
 

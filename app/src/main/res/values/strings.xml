@@ -26,10 +26,16 @@
     <string name="title_qcm">QCM</string>
     <string name="title_forum">Forum</string>
     <string-array name="cours">
-        <item>Android</item>
-        <item>Java</item>
-        <item>Python</item>
         <item>C++</item>
+        <item>C#</item>
+        <item>C</item>
+        <item>Python</item>
+        <item>Java</item>
+        <item>Android</item>
+        <item>Web</item>
+        <item>SQL</item>
+        <item>Node.js</item>
+        <item>Ordonnancement</item>
     </string-array>
 
     <string-array name="questions">

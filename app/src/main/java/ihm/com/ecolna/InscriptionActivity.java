@@ -1,15 +1,19 @@
 package ihm.com.ecolna;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,6 +27,11 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
+
+import ihm.com.ecolna.model.Etudiant;
+import ihm.com.ecolna.tools.IRequest;
+import ihm.com.ecolna.tools.WebService;
 
 public class InscriptionActivity extends AppCompatActivity {
     EditText mail = null;
@@ -30,7 +39,12 @@ public class InscriptionActivity extends AppCompatActivity {
     EditText nom = null;
     EditText prenom = null;
     EditText ecole = null;
+    private String TAG = InscriptionActivity.class.getSimpleName();
+    private boolean isValid = false ;
+    private List<Etudiant> le ;
+     ProgressDialog pDialog;
 
+    Context mcontext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +56,7 @@ public class InscriptionActivity extends AppCompatActivity {
         mail = (EditText)findViewById(R.id.mail);
         key= (EditText)findViewById(R.id.password);
         ecole=(EditText)findViewById(R.id.ecole);
-        new PostData().execute("http://192.168.1.2:1000/api/etudiant");
+
     }
 
 
@@ -62,12 +76,15 @@ public class InscriptionActivity extends AppCompatActivity {
                 && !(mail.getText().toString().equals(""))&& !(key.getText().toString().equals("")))
             ecole.setError("Veuillez saisir votre institut");
 
-        else if (!(nom.getText().toString().equals(""))&& !(prenom.getText().toString().equals(""))&& !(mail.getText().toString().equals(""))
-                && !(key.getText().toString().equals(""))&& !(ecole.getText().toString().equals(""))){
-            Intent intent = new Intent(this, HomeActivity.class);
+        else
+        {
+            new PostData().execute("http://192.168.1.2:1000/api/etudiant");
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
+
         }
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -91,6 +108,7 @@ public class InscriptionActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
     class PostData extends AsyncTask<String, Void, String> {
 
         StringBuilder resultat = new StringBuilder();
@@ -108,11 +126,13 @@ public class InscriptionActivity extends AppCompatActivity {
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
+
         }
 
         @Override
         protected void onPostExecute(String resultat) {
             super.onPostExecute(resultat);
+
         }
 
         private String postData(String urlPath) throws IOException, JSONException {

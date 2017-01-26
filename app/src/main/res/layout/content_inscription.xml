@@ -101,25 +101,25 @@
             android:layout_marginRight="50dp"
             android:layout_marginTop="10dp"
             android:textColor="@color/colorPrimary" />
-
         <Button
-            android:text="s'inscrire"
+            android:text="Enregistrer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/cnx"
             android:onClick="connexion"
-            android:layout_marginLeft="100dp"
-            android:layout_marginRight="100dp"
-            android:layout_marginTop="30dp"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="@android:color/background_light"
+            android:drawableLeft="@drawable/save"
+            android:textSize="20dp"
+
+            android:layout_marginLeft="90dp"
+            android:layout_marginRight="90dp"
             />
+
+
 
     </LinearLayout>
 
-        <ImageButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/retour"
-            android:id="@+id/imageButton" />
 
 
 </RelativeLayout>

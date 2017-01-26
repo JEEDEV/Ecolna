@@ -1,8 +1,6 @@
 package ihm.com.ecolna;
 
-/**
- * Created by bilel on 13/11/2016.
- */
+
 
 
 import android.content.Context;

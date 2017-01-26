@@ -13,9 +13,6 @@ import java.util.List;
 
 import ihm.com.ecolna.model.Etudiant;
 
-/**
- * Created by bilel on 10/12/2016.
- */
 
 public class WebService {
 

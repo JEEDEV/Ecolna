@@ -5,9 +5,7 @@ import android.content.Context;
 
 import java.util.HashMap;
 
-/**
- * Created by bilel on 17/12/2016.
- */
+
 
 public class MAsyncTask extends android.os.AsyncTask<Void, HashMap, HashMap> {
 

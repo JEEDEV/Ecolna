@@ -2,8 +2,10 @@ package ihm.com.ecolna;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,9 +25,9 @@ import ihm.com.ecolna.tools.MAsyncTask;
 public class MainActivity extends AppCompatActivity  {
     EditText mail = null;
     EditText key = null;
-    TextView cnx = null;
+    TextView rslt=null;
 
-
+   public String etudiant;
 
     private List<Etudiant> le ;
 
@@ -42,7 +44,6 @@ public class MainActivity extends AppCompatActivity  {
         setSupportActionBar(toolbar);
         mail = (EditText) findViewById(R.id.Email);
         key = (EditText) findViewById(R.id.key);
-        cnx = (TextView) findViewById(R.id.db);
         le = new ArrayList<Etudiant>();
 
 
@@ -51,24 +52,20 @@ public class MainActivity extends AppCompatActivity  {
 
     public void authenticate(View view) {
 
-
-
-
-
-
             if (mail.getText().toString().length() == 0) mail.setError("l'Email est obligatoire !");
 
             if (key.getText().toString().length() == 0 && mail.getText().toString().length() != 0)
                     key.setError("le mot de passe est obligatoire !");
-                else
+               else
                 {
                     if(findStudent(mail.getText().toString(),key.getText().toString()))
                     {
                     Intent intent = new Intent(this, HomeActivity.class);
-                    startActivity(intent);
-                    }
 
-                    else  key.setError("erreur !");
+                    startActivity(intent);
+                   }
+
+
                 }
             }
 
@@ -89,13 +86,20 @@ public class MainActivity extends AppCompatActivity  {
                 le=(List<Etudiant>) map.get("Response");
             for(Etudiant e : le)
             {
-                if(e.getEmail().equals(email)&&e.getPassword().equals(password)) return true;
+                if(e.getEmail().equals(email)&&e.getPassword().equals(password)) {
+                    NavigationView navigationView =(NavigationView)findViewById(R.id.nav_header_container);
+                    View headerView = LayoutInflater.from(this).inflate(R.layout.fragment_navigation_drawer, navigationView, false);
+                   // navigationView.addHeaderView(headerView);
+                    rslt = (TextView)headerView.findViewById(R.id.etudiant);
+                    rslt.setText("Bienvenue"+ e.getPrenom().toString()+" "+e.getNom().toString());
+                    return true;
+                }
             }
 
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
-            e.printStackTrace();
+            e.printStackTrace() ;
         }
 
 
@@ -105,7 +109,9 @@ public class MainActivity extends AppCompatActivity  {
 
     }
 
-
+     public String getEtudiant(){
+         return etudiant;
+     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

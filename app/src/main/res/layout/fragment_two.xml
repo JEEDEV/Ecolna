@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/tableLayout1"
+    android:id="@+id/tableLayout2"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
@@ -20,15 +20,16 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <TableRow android:id="@+id/tablerow1"
-        android:layout_marginTop="80dp"
+    <LinearLayout
+        android:layout_marginTop="70dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp">
 
 
         <TextView
-            android:text="Ce question est il  radio ? : "
-            android:layout_width="wrap_content"
+            android:text="un destructeur retourne une valeur"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
@@ -57,17 +58,18 @@
 
         </RadioGroup>
 
-    </TableRow>
+    </LinearLayout>
 
-    <TableRow android:id="@+id/tablerow"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp">
 
 
         <TextView
-            android:text="Ce question est il edit text ? : "
-            android:layout_width="wrap_content"
+            android:text="quel est le mot - clé propre à allouer de la mémoire?"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
@@ -80,63 +82,59 @@
             android:ems="8"
             android:id="@+id/edit2" />
 
-    </TableRow>
+    </LinearLayout>
 
+
+    <TextView
+        android:text="Quelle est pas un niveau de protection fourni par les classes en C ++?"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/ques3"
+        android:layout_marginTop="20dp"/>
 
     <TableRow android:id="@+id/tablerow2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
+        >
 
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            >
 
-            <TextView
-                android:text="Ce ci est checkbox : "
+            <CheckBox android:id="@+id/checkbox1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="5dp"
-                android:id="@+id/ques3" />
-
-            <CheckBox android:id="@+id/checkbox_meat"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="meat"
+                android:text="protected"
                 />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-
-            <CheckBox android:id="@+id/checkbox_cheese"
+            <CheckBox android:id="@+id/checkbox2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="cheese" />
+                android:text="hidden" />
 
-            <CheckBox android:id="@+id/checkbox_gris"
+            <CheckBox android:id="@+id/checkbox3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="gris" />
+                android:text="private" />
         </LinearLayout>
 
     </TableRow>
 
-    <TableRow android:id="@+id/tablerow3"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp">
 
 
         <TextView
-            android:text="Ce ci est un spinner : "
-            android:layout_width="wrap_content"
+            android:text="Lequel des éléments suivants est le mot - clé propre à désaffecter la mémoire?"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
@@ -147,24 +145,25 @@
         <Spinner
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/spinner" />
+            android:id="@+id/spinner"
+            />
 
 
 
-    </TableRow>
+    </LinearLayout>
 
-    <TableRow android:id="@+id/tablerow5"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp">
 
 
         <TextView
-            android:text="Ce question est il edit text ? : "
-            android:layout_width="wrap_content"
+            android:text="Comment faire une allocation dynamique ?"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="5dp"
             android:id="@+id/ques5" />
 
         <EditText
@@ -174,7 +173,7 @@
             android:ems="8"
             android:id="@+id/edit5" />
 
-    </TableRow>
+    </LinearLayout>
 
 
 

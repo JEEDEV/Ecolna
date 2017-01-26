@@ -14,15 +14,14 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarDrawerToggle;
 
 import android.support.v7.widget.Toolbar;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import ihm.com.ecolna.model.NavDrawerItem;
 
-/**
- * Created by bilel on 13/11/2016.
- */
+
 
 public class FragmentDrawer extends Fragment {
 
@@ -35,6 +34,7 @@ public class FragmentDrawer extends Fragment {
     private View containerView;
     private static String[] titles = null;
     private FragmentDrawerListener drawerListener;
+    TextView nom =null;
 
     public FragmentDrawer() {
 

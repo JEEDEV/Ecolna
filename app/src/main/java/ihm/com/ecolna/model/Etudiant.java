@@ -3,9 +3,7 @@ package ihm.com.ecolna.model;
 
 
 
-/**
- * Created by bilel on 10/12/2016.
- */
+
 
 public class Etudiant {
 

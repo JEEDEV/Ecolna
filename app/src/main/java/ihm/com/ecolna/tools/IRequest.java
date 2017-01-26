@@ -1,12 +1,11 @@
 package ihm.com.ecolna.tools;
 
-/**
- * Created by bilel on 10/12/2016.
- */
+
 
 public interface IRequest {
 
-    String getAllStudents ="http://10.0.2.2:3000/api/etudiants";
-
+    String getAllStudents ="http://192.168.1.2:1000/api/etudiant";
+    String getAllCours ="http://192.168.1.2:2000/api/cours";
+    String getAllQcm ="http://192.168.1.2:3000/api/qcm";
 
 }

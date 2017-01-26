@@ -33,7 +33,7 @@ public class CoursActivity extends AppCompatActivity {
     ListView cours;
     private DrawerLayout drawerLayout;
     String[] chapitre = new String[]{
-            "chapitre 1", "chapitre 2", "chapitre 3", "chapitre 4"
+            "Introduction", "Type et variables", "Expression","tableaux", "procédure et fonction","pointeurs","classe", "héritage"
     };
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
@@ -130,10 +130,8 @@ public class CoursActivity extends AppCompatActivity {
         @Override
         public void onItemClick(AdapterView<?> adapter, View view, int position, long arg3) {
             // TODO Auto-generated method stub
-           // TextView listText = (TextView) view.findViewById(R.id.listCours);
-           // String text = listText.getText().toString();
+
             Intent intent = new Intent(CoursActivity.this,DetailCoursActivity.class);
-           // intent.putExtra("selected-item", text);
             startActivity(intent);
 
         }
